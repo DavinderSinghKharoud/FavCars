@@ -9,4 +9,13 @@
     <string name="title_image_select">Select Image Action</string>
     <string name="label_camera">Camera</string>
     <string name="label_gallery">Gallery</string>
+
+    <string name="label_add_car">Add Car</string>
+    <string name="image_content_description">image</string>
+    <string name="name_add_car">Name</string>
+    <string name="type_add_car">Type</string>
+    <string name="price_add_car">Price Range</string>
+    <string name="label_description">Description</string>
+    <string name="label_engine_pow">Engine Power</string>
+    <string name="label_review">Review</string>
 </resources>
