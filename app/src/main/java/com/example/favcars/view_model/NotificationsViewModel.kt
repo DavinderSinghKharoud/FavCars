@@ -1,4 +1,4 @@
-package com.example.favcars.ui.notifications
+package com.example.favcars.view_model
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
