@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FavCars">
         <activity
+        android:name=".view.activities.AddUpdateCarsActivity"
+        android:configChanges="orientation"
+        android:label="Add Car"
+        android:launchMode="singleTop"
+        android:theme="@style/Theme.FavCars.NoActionBar" />
+        <activity
             android:name=".view.activities.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.FavCars.NoActionBar">

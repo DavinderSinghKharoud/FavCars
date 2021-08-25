@@ -17,5 +17,15 @@
     <string name="price_add_car">Price Range</string>
     <string name="label_description">Description</string>
     <string name="label_engine_pow">Engine Power</string>
-    <string name="label_review">Review</string>
+    <string name="label_review">Review (Optional)</string>
+    <string name="item_value">Item</string>
+    <string name="title_select_car_type">SELECT CAR TYPE</string>
+    <string name="title_select_car_engine_pow">SELECT ENGINE POWER</string>
+    <string name="title_select_car_price">SELECT CAR PRICE</string>
+    <string name="err_msg_select_car_image">Please, upload a car image!</string>
+    <string name="err_msg_name">Please, add name!</string>
+    <string name="err_msg_type">Please, select car type!</string>
+    <string name="err_msg_engine_power">Please, select the engine power!</string>
+    <string name="err_msg_description">Please, add the description!</string>
+    <string name="err_msg_price">Please, select the price!</string>
 </resources>

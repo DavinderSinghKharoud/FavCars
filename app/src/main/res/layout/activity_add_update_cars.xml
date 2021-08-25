@@ -53,7 +53,7 @@
                     app:srcCompat="@drawable/ic_insert_photo" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/iv_add_dish_image"
+                    android:id="@+id/iv_add_car_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end|bottom"
