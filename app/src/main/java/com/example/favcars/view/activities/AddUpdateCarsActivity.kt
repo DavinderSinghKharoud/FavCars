@@ -14,6 +14,7 @@ import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
@@ -28,7 +29,11 @@ import com.example.favcars.R
 import com.example.favcars.databinding.ActivityAddUpdateCarsBinding
 import com.example.favcars.databinding.DialogCustomImageSelectionBinding
 import com.example.favcars.databinding.DialogCustomListBinding
+import com.example.favcars.model.entities.Car
 import com.example.favcars.view.adapters.CustomListItemAdapter
+import com.example.favcars.view_model.CarsViewModel
+import com.example.favcars.view_model.CarsViewModelFactory
+import com.example.favdish.application.FavCarsApplication
 import com.example.favdish.util.Constants
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
@@ -47,6 +52,10 @@ class AddUpdateCarsActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var mBinding: ActivityAddUpdateCarsBinding
     private var mImagePath: String = ""
     private lateinit var mCustomListDialog: Dialog
+
+    private val mFavCarsViewModelFactory: CarsViewModel by viewModels {
+        CarsViewModelFactory((application as FavCarsApplication).repository)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -303,6 +312,19 @@ class AddUpdateCarsActivity : AppCompatActivity(), View.OnClickListener {
                         }
 
                         else -> {
+                            val carDetails: Car = Car(
+                                mImagePath,
+                                Constants.CAR_IMAGE_SOURCE_LOCAL,
+                                title,
+                                type,
+                                enginePower,
+                                description,
+                                price,
+                                review,
+                                false
+                            )
+
+                            mFavCarsViewModelFactory.insert(carDetails)
                             displayToast(this@AddUpdateCarsActivity, "Car added successfully!")
                             //Close the activity
                             finish()
