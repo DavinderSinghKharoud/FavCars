@@ -26,6 +26,7 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.example.favcars.R
+import com.example.favcars.application.FavCarsApplication
 import com.example.favcars.databinding.ActivityAddUpdateCarsBinding
 import com.example.favcars.databinding.DialogCustomImageSelectionBinding
 import com.example.favcars.databinding.DialogCustomListBinding
@@ -33,7 +34,6 @@ import com.example.favcars.model.entities.Car
 import com.example.favcars.view.adapters.CustomListItemAdapter
 import com.example.favcars.view_model.CarsViewModel
 import com.example.favcars.view_model.CarsViewModelFactory
-import com.example.favdish.application.FavCarsApplication
 import com.example.favdish.util.Constants
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport

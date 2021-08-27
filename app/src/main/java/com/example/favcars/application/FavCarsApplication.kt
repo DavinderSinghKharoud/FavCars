@@ -1,4 +1,4 @@
-package com.example.favdish.application
+package com.example.favcars.application
 
 import android.app.Application
 import com.example.favcars.model.database.CarsRepository

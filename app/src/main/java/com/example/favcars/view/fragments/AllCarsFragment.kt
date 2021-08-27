@@ -4,31 +4,57 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.favcars.R
-import com.example.favcars.databinding.FragmentHomeBinding
+import com.example.favcars.application.FavCarsApplication
+import com.example.favcars.databinding.FragmentAllCarsBinding
 import com.example.favcars.view.activities.AddUpdateCarsActivity
-import com.example.favcars.view_model.HomeViewModel
+import com.example.favcars.view.adapters.AllCarsAdapter
+import com.example.favcars.view_model.CarsViewModel
+import com.example.favcars.view_model.CarsViewModelFactory
 
 class AllCarsFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
-    private var _binding: FragmentHomeBinding? = null
+    private lateinit var mBinding: FragmentAllCarsBinding
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    private val mCarsViewModel: CarsViewModel by viewModels {
+        CarsViewModelFactory((requireActivity().application as FavCarsApplication).repository)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        mBinding = FragmentAllCarsBinding.inflate(inflater, container, false)
+        return mBinding.root
+    }
 
-        return binding.root
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        //set up recycler view
+        mBinding.rvCarsList.layoutManager = GridLayoutManager(requireActivity(), 2)
+        val carsAdapter = AllCarsAdapter(this@AllCarsFragment)
+        mBinding.rvCarsList.adapter = carsAdapter
+
+        //observe the dishes
+        mCarsViewModel.allCarsList.observe(viewLifecycleOwner) { dishes ->
+            dishes?.let {
+                if (it.isNotEmpty()) {
+                    mBinding.rvCarsList.visibility = View.VISIBLE
+                    mBinding.tvNoCars.visibility = View.GONE
+
+                    carsAdapter.setDishes(it)
+                } else {
+                    mBinding.rvCarsList.visibility = View.GONE
+                    mBinding.tvNoCars.visibility = View.VISIBLE
+                }
+            }
+        }
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,8 +78,4 @@ class AllCarsFragment : Fragment() {
         super.onCreateOptionsMenu(menu, inflater)
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }

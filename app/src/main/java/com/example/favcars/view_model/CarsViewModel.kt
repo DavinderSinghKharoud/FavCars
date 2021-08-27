@@ -11,7 +11,7 @@ class CarsViewModel(private val repository: CarsRepository) : ViewModel() {
         repository.insertCar(car)
     }
 
-    val allDishesList: LiveData<List<Car>> = repository.allCarsList.asLiveData()
+    val allCarsList: LiveData<List<Car>> = repository.allCarsList.asLiveData()
 }
 
 class CarsViewModelFactory(private val repository: CarsRepository) :
