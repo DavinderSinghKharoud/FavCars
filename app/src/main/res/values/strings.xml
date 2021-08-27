@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">FavCars</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_all_cars">All Cars</string>
+    <string name="title_favorite_cars">Favorites</string>
+    <string name="title_random_cars">Random Car</string>
     <string name="splash_screen_title">FavCars</string>
     <string name="add_car">Add Car</string>
 

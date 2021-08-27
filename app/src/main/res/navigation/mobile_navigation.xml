@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_all_cars">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_all_cars"
         android:name="com.example.favcars.view.fragments.AllCarsFragment"
-        android:label="@string/title_home"
+        android:label="@string/title_all_cars"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.favcars.view.fragments.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_favorite_cars"
+        android:name="com.example.favcars.view.fragments.FavoriteCarsFragment"
+        android:label="@string/title_favorite_cars"
+        tools:layout="@layout/fragment_favorite_cars" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.favcars.view.fragments.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_random_cars"
+        android:name="com.example.favcars.view.fragments.RandomCarsFragment"
+        android:label="@string/title_random_cars"
+        tools:layout="@layout/fragment_random_cars" />
 </navigation>
