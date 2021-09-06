@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.favcars.databinding.ItemCarLayoutBinding
 import com.example.favcars.model.entities.Car
+import com.example.favcars.view.fragments.AllCarsFragment
 
 class AllCarsAdapter(private val fragment: Fragment) :
     RecyclerView.Adapter<AllCarsAdapter.ViewHolder>() {
@@ -16,6 +17,7 @@ class AllCarsAdapter(private val fragment: Fragment) :
     class ViewHolder(view: ItemCarLayoutBinding) : RecyclerView.ViewHolder(view.root) {
         val mDishImage = view.ivCarImage
         val tvTitle = view.tvCarName
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -31,6 +33,12 @@ class AllCarsAdapter(private val fragment: Fragment) :
             .load(car.image)
             .into(holder.mDishImage)
         holder.tvTitle.text = car.name
+        holder.itemView.setOnClickListener {
+            if (fragment is AllCarsFragment) {
+                //pass the details to "DishDetails" fragment
+                fragment.navigateDishDetails()
+            }
+        }
     }
 
     override fun getItemCount(): Int {

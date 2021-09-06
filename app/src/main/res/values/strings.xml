@@ -30,4 +30,7 @@
     <string name="err_msg_price">Please, select the price!</string>
     <string name="label_no_cars_added">Empty</string>
     <string name="label_car_name">Car Name</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_car_details_frag">"Car details "</string>
 </resources>

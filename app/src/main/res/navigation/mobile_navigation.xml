@@ -9,7 +9,11 @@
         android:id="@+id/navigation_all_cars"
         android:name="com.example.favcars.view.fragments.AllCarsFragment"
         android:label="@string/title_all_cars"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_all_cars_to_navigation_car_details"
+            app:destination="@id/navigation_car_details" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_favorite_cars"
@@ -22,4 +26,10 @@
         android:name="com.example.favcars.view.fragments.RandomCarsFragment"
         android:label="@string/title_random_cars"
         tools:layout="@layout/fragment_random_cars" />
+
+    <fragment
+        android:id="@+id/navigation_car_details"
+        android:name="com.example.favcars.view.fragments.CarDetailsFragment"
+        android:label="@string/title_car_details_frag"
+        tools:layout="@layout/fragment_car_details" />
 </navigation>

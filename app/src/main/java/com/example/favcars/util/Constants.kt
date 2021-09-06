@@ -14,6 +14,7 @@ object Constants {
     fun carTypes(): ArrayList<String> {
         val list = ArrayList<String>()
         list.add("sedan")
+        list.add("jeep")
         list.add("coupe")
         list.add("sports car")
         list.add("station wagon")

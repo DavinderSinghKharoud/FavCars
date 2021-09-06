@@ -343,13 +343,13 @@ class AddUpdateCarsActivity : AppCompatActivity(), View.OnClickListener {
         mCustomListDialog.dismiss()
         when (selection) {
             Constants.CAR_TYPE -> {
-                mBinding.etType.setText(item)
+                mBinding.etType.setText(item.uppercase())
             }
             Constants.CAR_ENGINE_POWER -> {
-                mBinding.etEnginePower.setText(item)
+                mBinding.etEnginePower.setText(item.uppercase())
             }
             Constants.CAR_PRICE -> {
-                mBinding.etPriceRange.setText(item)
+                mBinding.etPriceRange.setText(item.uppercase())
             }
         }
     }
