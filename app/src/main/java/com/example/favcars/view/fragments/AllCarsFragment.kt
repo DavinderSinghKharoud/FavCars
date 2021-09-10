@@ -11,6 +11,7 @@ import com.example.favcars.R
 import com.example.favcars.application.FavCarsApplication
 import com.example.favcars.databinding.FragmentAllCarsBinding
 import com.example.favcars.view.activities.AddUpdateCarsActivity
+import com.example.favcars.view.activities.MainActivity
 import com.example.favcars.view.adapters.AllCarsAdapter
 import com.example.favcars.view_model.CarsViewModel
 import com.example.favcars.view_model.CarsViewModelFactory
@@ -79,7 +80,17 @@ class AllCarsFragment : Fragment() {
         super.onCreateOptionsMenu(menu, inflater)
     }
 
-    fun navigateDishDetails(){
+    fun navigateDishDetails() {
         findNavController().navigate(AllCarsFragmentDirections.actionNavigationAllCarsToNavigationCarDetails())
+        if (requireActivity() is MainActivity) {
+            (activity as MainActivity?)?.hideBottomNavigationView()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (requireActivity() is MainActivity) {
+            (activity as MainActivity?)?.showBottomNavigationView()
+        }
     }
 }
