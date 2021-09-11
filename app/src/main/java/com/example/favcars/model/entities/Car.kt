@@ -1,9 +1,12 @@
 package com.example.favcars.model.entities
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 @Entity(tableName = "cars_table")
 data class Car(
     @ColumnInfo val image: String,
@@ -16,4 +19,4 @@ data class Car(
     @ColumnInfo(name = "review") val review: String,
     @ColumnInfo(name = "favorite_car") val favCar: Boolean,
     @PrimaryKey(autoGenerate = true) val id: Int = 0
-)
+): Parcelable

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.favcars.R
 import com.example.favcars.application.FavCarsApplication
 import com.example.favcars.databinding.FragmentAllCarsBinding
+import com.example.favcars.model.entities.Car
 import com.example.favcars.view.activities.AddUpdateCarsActivity
 import com.example.favcars.view.activities.MainActivity
 import com.example.favcars.view.adapters.AllCarsAdapter
@@ -80,8 +81,10 @@ class AllCarsFragment : Fragment() {
         super.onCreateOptionsMenu(menu, inflater)
     }
 
-    fun navigateDishDetails() {
-        findNavController().navigate(AllCarsFragmentDirections.actionNavigationAllCarsToNavigationCarDetails())
+    fun navigateCarDetails(car: Car) {
+        findNavController().navigate(
+            AllCarsFragmentDirections.actionNavigationAllCarsToNavigationCarDetails(car)
+        )
         if (requireActivity() is MainActivity) {
             (activity as MainActivity?)?.hideBottomNavigationView()
         }

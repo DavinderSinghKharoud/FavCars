@@ -35,8 +35,8 @@ class AllCarsAdapter(private val fragment: Fragment) :
         holder.tvTitle.text = car.name
         holder.itemView.setOnClickListener {
             if (fragment is AllCarsFragment) {
-                //pass the details to "DishDetails" fragment
-                fragment.navigateDishDetails()
+                //pass the details to "Car details" fragment
+                fragment.navigateCarDetails(car)
             }
         }
     }

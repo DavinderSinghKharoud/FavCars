@@ -31,5 +31,11 @@
         android:id="@+id/navigation_car_details"
         android:name="com.example.favcars.view.fragments.CarDetailsFragment"
         android:label="@string/title_car_details_frag"
-        tools:layout="@layout/fragment_car_details" />
+        tools:layout="@layout/fragment_car_details">
+        <argument
+            android:name="carDetails"
+            app:argType="com.example.favcars.model.entities.Car"
+            />
+    </fragment>
+
 </navigation>
