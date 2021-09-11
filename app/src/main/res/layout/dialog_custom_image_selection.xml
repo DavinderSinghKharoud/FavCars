@@ -9,7 +9,7 @@
     app:chainUseRtl="true">
 
     <TextView
-        android:id="@+id/tv_title"
+        android:id="@+id/tv_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/title_image_select"
@@ -36,7 +36,7 @@
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/tv_gallery"
-        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
         tools:ignore="UnusedAttribute" />
 
     <TextView
@@ -54,6 +54,6 @@
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintLeft_toRightOf="@id/tv_camera"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
         tools:ignore="UnusedAttribute" />
 </androidx.constraintlayout.widget.ConstraintLayout>

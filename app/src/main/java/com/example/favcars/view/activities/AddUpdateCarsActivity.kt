@@ -88,7 +88,7 @@ class AddUpdateCarsActivity : AppCompatActivity(), View.OnClickListener {
         mCustomListDialog.setContentView(binding.root)
 
         // set the values
-        binding.tvTitle.text = title
+        binding.tvName.text = title
         binding.rvList.layoutManager = LinearLayoutManager(this)
         binding.rvList.adapter = CustomListItemAdapter(this, itemsList, selection)
         mCustomListDialog.show()
