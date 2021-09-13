@@ -17,6 +17,6 @@ data class Car(
     @ColumnInfo val description: String,
     @ColumnInfo(name = "price_range") val priceRange: String,
     @ColumnInfo(name = "review") val review: String,
-    @ColumnInfo(name = "favorite_car") val favCar: Boolean,
+    @ColumnInfo(name = "favorite_car") var favCar: Boolean,
     @PrimaryKey(autoGenerate = true) val id: Int = 0
 ): Parcelable

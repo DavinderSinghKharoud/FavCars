@@ -13,4 +13,9 @@ class CarsRepository(private val carsDao: CarsDao) {
     }
 
     val allCarsList: Flow<List<Car>> = carsDao.getAllCarsList()
+
+    @WorkerThread
+    suspend fun updateFavCarData(car: Car) {
+        carsDao.updateFavCarDetails(car)
+    }
 }
