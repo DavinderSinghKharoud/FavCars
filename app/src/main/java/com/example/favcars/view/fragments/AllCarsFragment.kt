@@ -43,14 +43,14 @@ class AllCarsFragment : Fragment() {
         val carsAdapter = AllCarsAdapter(this@AllCarsFragment)
         mBinding.rvCarsList.adapter = carsAdapter
 
-        //observe the dishes
+        //observe the cars
         mCarsViewModel.allCarsList.observe(viewLifecycleOwner) { dishes ->
             dishes?.let {
                 if (it.isNotEmpty()) {
                     mBinding.rvCarsList.visibility = View.VISIBLE
                     mBinding.tvNoCars.visibility = View.GONE
 
-                    carsAdapter.setDishes(it)
+                    carsAdapter.setCars(it)
                 } else {
                     mBinding.rvCarsList.visibility = View.GONE
                     mBinding.tvNoCars.visibility = View.VISIBLE

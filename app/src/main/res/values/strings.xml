@@ -28,7 +28,7 @@
     <string name="err_msg_engine_power">Please, select the engine power!</string>
     <string name="err_msg_description">Please, add the description!</string>
     <string name="err_msg_price">Please, select the price!</string>
-    <string name="label_no_cars_added">Empty</string>
+    <string name="label_no_cars_added">Empty!</string>
     <string name="label_car_name">Car Name</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

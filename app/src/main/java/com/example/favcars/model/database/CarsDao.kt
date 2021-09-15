@@ -15,4 +15,7 @@ interface CarsDao {
 
     @Update
     suspend fun updateFavCarDetails(car: Car)
+
+    @Query("SELECT * FROM cars_table WHERE favorite_car = 1")
+    fun getFavoriteCarsList(): Flow<List<Car>>
 }

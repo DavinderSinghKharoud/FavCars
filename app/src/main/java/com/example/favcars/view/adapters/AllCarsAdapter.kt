@@ -45,7 +45,7 @@ class AllCarsAdapter(private val fragment: Fragment) :
         return cars.size
     }
 
-    fun setDishes(list: List<Car>) {
+    fun setCars(list: List<Car>) {
         cars = list
         notifyDataSetChanged()
     }

@@ -18,4 +18,6 @@ class CarsRepository(private val carsDao: CarsDao) {
     suspend fun updateFavCarData(car: Car) {
         carsDao.updateFavCarDetails(car)
     }
+
+    val allFavCarsList: Flow<List<Car>> = carsDao.getFavoriteCarsList()
 }

@@ -104,10 +104,12 @@ class CarDetailsFragment : Fragment(), View.OnClickListener {
                 mBinding!!.tvReview.text = it.carDetails.review
             } else mBinding!!.tvTitleReview.visibility = View.GONE
 
-            mBinding!!.ivFavoriteCar.setImageDrawable(ContextCompat.getDrawable(
-                requireActivity(),
-                if(args.carDetails.favCar) R.drawable.ic_favorite_selected else R.drawable.ic_favorite_unselected
-            ))
+            mBinding!!.ivFavoriteCar.setImageDrawable(
+                ContextCompat.getDrawable(
+                    requireActivity(),
+                    if (args.carDetails.favCar) R.drawable.ic_favorite_selected else R.drawable.ic_favorite_unselected
+                )
+            )
             mBinding!!.ivFavoriteCar.setOnClickListener(this)
         }
     }

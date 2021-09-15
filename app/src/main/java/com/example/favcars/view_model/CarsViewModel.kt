@@ -16,6 +16,8 @@ class CarsViewModel(private val repository: CarsRepository) : ViewModel() {
     fun update(car: Car) = viewModelScope.launch {
         repository.updateFavCarData(car)
     }
+
+    val favoriteCars: LiveData<List<Car>> = repository.allFavCarsList.asLiveData()
 }
 
 class CarsViewModelFactory(private val repository: CarsRepository) :
