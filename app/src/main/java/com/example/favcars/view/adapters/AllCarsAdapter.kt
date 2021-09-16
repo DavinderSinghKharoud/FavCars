@@ -8,6 +8,7 @@ import com.bumptech.glide.Glide
 import com.example.favcars.databinding.ItemCarLayoutBinding
 import com.example.favcars.model.entities.Car
 import com.example.favcars.view.fragments.AllCarsFragment
+import com.example.favcars.view.fragments.FavoriteCarsFragment
 
 class AllCarsAdapter(private val fragment: Fragment) :
     RecyclerView.Adapter<AllCarsAdapter.ViewHolder>() {
@@ -34,8 +35,10 @@ class AllCarsAdapter(private val fragment: Fragment) :
             .into(holder.mDishImage)
         holder.tvTitle.text = car.name
         holder.itemView.setOnClickListener {
+            //pass the details to "Car details" fragment
             if (fragment is AllCarsFragment) {
-                //pass the details to "Car details" fragment
+                fragment.navigateCarDetails(car)
+            }else if (fragment is FavoriteCarsFragment){
                 fragment.navigateCarDetails(car)
             }
         }

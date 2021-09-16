@@ -19,7 +19,11 @@
         android:id="@+id/navigation_favorite_cars"
         android:name="com.example.favcars.view.fragments.FavoriteCarsFragment"
         android:label="@string/title_favorite_cars"
-        tools:layout="@layout/fragment_favorite_cars" />
+        tools:layout="@layout/fragment_favorite_cars" >
+        <action
+            android:id="@+id/action_navigation_favorite_cars_to_navigation_car_details"
+            app:destination="@id/navigation_car_details" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_random_cars"

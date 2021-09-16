@@ -1,15 +1,17 @@
 package com.example.favcars.view.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.favcars.application.FavCarsApplication
 import com.example.favcars.databinding.FragmentFavoriteCarsBinding
+import com.example.favcars.model.entities.Car
+import com.example.favcars.view.activities.MainActivity
 import com.example.favcars.view.adapters.AllCarsAdapter
 import com.example.favcars.view_model.CarsViewModel
 import com.example.favcars.view_model.CarsViewModelFactory
@@ -56,6 +58,23 @@ class FavoriteCarsFragment : Fragment() {
         }
     }
 
+    fun navigateCarDetails(car: Car) {
+        findNavController().navigate(
+            FavoriteCarsFragmentDirections.actionNavigationFavoriteCarsToNavigationCarDetails(car)
+        )
+        if (requireActivity() is MainActivity) {
+            //Hide the bottom navigation
+            (activity as MainActivity?)!!.hideBottomNavigationView()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (requireActivity() is MainActivity) {
+            //Hide the bottom navigation
+            (activity as MainActivity?)!!.showBottomNavigationView()
+        }
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         mBinding = null
