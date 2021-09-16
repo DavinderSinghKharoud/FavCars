@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/edit_car"
+        android:orderInCategory="1"
+        android:title="@string/menu_edit_car"/>
+
+    <item
+        android:id="@+id/delete_car"
+        android:orderInCategory="2"
+        android:title="@string/menu_delete_car"/>
+</menu>

@@ -35,4 +35,6 @@
     <string name="title_car_details_frag">"Car details "</string>
     <string name="image_contentDescription">car</string>
     <string name="label_review_title">Review</string>
+    <string name="menu_edit_car">EDIT CAR</string>
+    <string name="menu_delete_car">DELETE CAR</string>
 </resources>
